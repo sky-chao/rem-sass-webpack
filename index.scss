@@ -1,0 +1,97 @@
+@function px2rem($px) {
+    $rem: 37.5px;
+    @return ($px/$rem)+rem;
+}
+
+.header {
+    width: 100%;
+    overflow: hidden;
+    background-color: blue;
+    ul {
+        padding-left: px2rem(40px);
+        overflow: hidden;
+        li {
+            margin-right: px2rem(20px);
+            float: left;
+            height: px2rem(40px);
+            line-height: px2rem(40px);
+            font-size: px2rem(16px);
+            color: #eee;
+            &:nth-child(2) {
+                color: #fff;
+                font-size: px2rem(19px);
+            }
+        }
+    }
+}
+
+.banner {
+    position: relative;
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    p {
+        position: absolute;
+        bottom: px2rem(20px);
+        left: px2rem(30px);
+        color: #fff;
+        font-size: px2rem(20px);
+    }
+}
+
+.newList {
+    @media screen and (min-width: 300px) and (max-width: 800px) {}
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: px2rem(10px);
+    padding-right: px2rem(10px);
+    .list {
+        margin-top: px2rem(10px);
+        margin-bottom: px2rem(10px);
+        .newItem {
+            border-bottom: px2rem(1px) solid #ddd;
+            overflow: hidden;
+            padding-bottom: px2rem(10px);
+            padding-top: px2rem(10px);
+            position: relative;
+            img {
+                display: block;
+                width: 25%;
+                height: auto;
+                float: left;
+                padding-right: px2rem(10px);
+            }
+            p {
+                font-size: px2rem(16px);
+            }
+            .hour {
+                position: absolute;
+                top: px2rem(56px);
+                left: px2rem(98px);
+                color: #666;
+                font-size: px2rem(14px);
+            }
+            .num {
+                position: absolute;
+                top: px2rem(56px);
+                right: px2rem(22px);
+                color: #666;
+                font-size: px2rem(14px);
+                &:before {
+                    content: "";
+                    display: block;
+                    background-image: url("./images/read.png");
+                    width: px2rem(13px);
+                    height: px2rem(13px);
+                    background-size: contain;
+                    position: absolute;
+                    top: px2rem(1px);
+                    right: px2rem(25px);
+                    font-size: px2rem(14px);
+                }
+            }
+        }
+    }
+}
